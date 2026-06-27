@@ -1,0 +1,72 @@
+/* Import Bootstrap Icons to complement Lucide */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+  --bg-primary: #f4f6f9;
+  --bg-card: #ffffff;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --accent-farm: #198754; 
+  --border-color: #e3e6f0;
+  --sidebar-bg: #ffffff;
+}
+
+/* Dark Mode Overrides */
+html.dark {
+  --bg-primary: #0b0f19;
+  --bg-card: #151c2c;
+  --text-main: #f8f9fa;
+  --text-muted: #a0aec0;
+  --border-color: #222e45;
+  --sidebar-bg: #111827;
+}
+
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-main) !important;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Customized Premium UI Cards */
+.custom-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Typography elements color sync */
+h1, h2, h3, h4, h5, h6, th, td {
+  color: var(--text-main) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Form inputs styling for dark theme compliance */
+.form-control, .form-select {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-main) !important;
+  border-radius: 10px;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--accent-farm) !important;
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15) !important;
+}
+
+.table th {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

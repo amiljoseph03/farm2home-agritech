@@ -1,0 +1,13 @@
+.custom-header {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+}
+
+.header-btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.header-btn:hover {
+  transform: scale(1.03);
+}

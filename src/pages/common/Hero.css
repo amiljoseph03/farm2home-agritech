@@ -1,0 +1,22 @@
+.hero-section {
+  background: linear-gradient(180deg, rgba(25,135,84,0.04) 0%, rgba(25,135,84,0) 100%);
+}
+
+.hero-title {
+  line-height: 1.2;
+}
+
+.hero-search-container {
+  background-color: var(--bg-card) !important;
+  max-width: 500px;
+}
+
+.hero-img-wrapper img {
+  max-height: 450px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hero-img-wrapper:hover .hero-img {
+  transform: scale(1.01);
+}
