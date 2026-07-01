@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Hero from './Hero';
-// import ContentSection from './ContentSection';
+import ContentSection from './ContentSection';
 
 export default function Home({ onExplore, onJoinAsFarmer }) {
   return (
@@ -13,7 +13,7 @@ export default function Home({ onExplore, onJoinAsFarmer }) {
       <Hero onExplore={onExplore} />
 
       {/* 3. Core Operational Features Grid */}
-      {/* <ContentSection onExplore={onExplore} /> */}
+      <ContentSection onExplore={onExplore} />
 
       {/* Simple Footer directly at base */}
       <footer className="bg-dark text-secondary text-center py-4 mt-auto">

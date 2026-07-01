@@ -1,0 +1,11 @@
+.feature-box {
+  background-color: var(--bg-card);
+}
+
+.cta-link {
+  transition: gap 0.2s ease;
+}
+
+.feature-box:hover .cta-link {
+  gap: 12px !important;
+}
