@@ -24,3 +24,5 @@ export default function Home({ onExplore, onJoinAsFarmer }) {
     </div>
   );
 }
+
+

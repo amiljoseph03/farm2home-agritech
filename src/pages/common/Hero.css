@@ -1,22 +1,78 @@
-.hero-section {
-  background: linear-gradient(180deg, rgba(25,135,84,0.04) 0%, rgba(25,135,84,0) 100%);
+/* Core background engine */
+.carousel-bg-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 7s ease-in-out;
 }
 
-.hero-title {
-  line-height: 1.2;
+/* Add a slow pan animation to active background image for premium feel */
+.carousel-item.active .carousel-bg-img {
+  transform: scale(1.08);
+}
+
+/* Override standard caption positions for elegant alignment */
+.custom-caption {
+  bottom: unset !important;
+  top: 30% !important;
+  left: 10% !important;
+  right: 10% !important;
+  max-width: 650px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.custom-caption h1 {
+  color: #ffffff !important;
+  font-weight: 500;
+    font-size: 2.25rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.custom-caption p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 0.75rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.max-w-md {
+  max-width: 550px;
+}
+
+/* Floating interactive input stack placement styling */
+.absolute-search-box {
+  bottom: 12%;
+  width: 90%;
+  max-width: 650px;
+  z-index: 20;
+  text-align: center;
 }
 
 .hero-search-container {
-  background-color: var(--bg-card) !important;
-  max-width: 500px;
+  background-color: #ffffff !important;
+  border-radius: 50px !important;
+  transition: box-shadow 0.3s ease;
 }
 
-.hero-img-wrapper img {
-  max-height: 450px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+.hero-search-container:focus-within {
+  box-shadow: 0 10px 30px rgba(25, 135, 84, 0.25) !important;
 }
 
-.hero-img-wrapper:hover .hero-img {
-  transform: scale(1.01);
+.hero-search-container input::placeholder {
+  color: #6c757d !important;
+}
+
+/* Customize active carousel button hashes */
+.unique-indicators [data-bs-target] {
+  width: 35px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.unique-indicators .active {
+  background-color: #198754 !important;
+  width: 50px;
 }
