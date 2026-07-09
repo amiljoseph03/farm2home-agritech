@@ -8,11 +8,10 @@
   transition: transform 7s ease-in-out;
 }
 
-/* Add a slow pan animation to active background image for premium feel */
+/* Add a slow pan animation to actpremium feel */
 .carousel-item.active .carousel-bg-img {
   transform: scale(1.08);
 }
-
 /* Override standard caption positions for elegant alignment */
 .custom-caption {
   bottom: unset !important;
@@ -41,7 +40,7 @@
   max-width: 550px;
 }
 
-/* Floating interactive input stack placement styling */
+/* Floating interactive styling */
 .absolute-search-box {
   bottom: 12%;
   width: 90%;

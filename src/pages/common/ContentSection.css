@@ -1,11 +1,58 @@
-.feature-box {
-  background-color: var(--bg-card);
+/* Core Grid Alignment styling overrides */
+.ecosystem-section {
+  position: relative;
+  z-index: 5;
 }
 
-.cta-link {
-  transition: gap 0.2s ease;
+/* Modern Card Architecture */
+.modern-ecosystem-card {
+  border-radius: 16px !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.feature-box:hover .cta-link {
-  gap: 12px !important;
+.modern-ecosystem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+  border-color: #198754 !important;
+}
+
+/* Image zoom viewport control rules */
+.ecosystem-img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modern-ecosystem-card:hover .ecosystem-img {
+  transform: scale(1.06);
+}
+
+/* Subtle image layout bottom dark vignette layer */
+.gradient-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Glassmorphism pill badge layout */
+.glass-pill {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 0.75rem;
+}
+
+/* Interactive CTA micro-actions definitions */
+.call-action-trigger {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.transition-arrow {
+  transition: transform 0.2s ease;
+}
+
+.modern-ecosystem-card:hover .call-action-trigger {
+  background-color: #198754;
+  color: #ffffff !important;
+}
+
+.modern-ecosystem-card:hover .transition-arrow {
+  transform: translateX(4px);
 }

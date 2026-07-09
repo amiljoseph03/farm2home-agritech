@@ -104,7 +104,8 @@ export default function Hero({ onExplore }) {
       </div>
 
       {/* 3. Floating Interactive Overlay Search Container */}
-      {/* <div className="absolute-search-box position-absolute start-50 translate-middle-x">
+      {
+      /* <div className="absolute-search-box position-absolute start-50 translate-middle-x">
         <div className="bg-white p-3 rounded-4 shadow-lg border d-flex align-items-center gap-2 hero-search-container mx-auto">
           <Search size={22} className="text-secondary ms-2" />
           <input
@@ -133,7 +134,9 @@ export default function Hero({ onExplore }) {
             Lease Fleet <Tractor size={16} />
           </button>
         </div>
-      </div> */}
+      </div> 
+      */
+      }
 
       {/* 4. Direction Navigators */}
       <button
