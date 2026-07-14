@@ -1,0 +1,74 @@
+/* Section Base Background matching image background canvas tone */
+.why-we-are-section {
+  background-color: #e5e2db !important;
+}
+
+.why-title {
+  color: #1a1a1a;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.why-desc {
+  color: #555555 !important;
+  line-height: 1.6;
+}
+
+/* Card Foundation Rulesets */
+.why-card {
+  border-radius: 28px !important; /* Perfect smooth rounded design from reference */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none !important;
+}
+
+/* Dynamic Text Cards Accent Rules */
+.why-card.text-card {
+  background-color: #edebe4;
+  min-height: 200px;
+}
+
+.why-card.text-card p {
+  max-width: 280px;
+  line-height: 1.6;
+}
+
+/* Image Wrapper Optimization Settings */
+.why-card.image-card {
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.matrix-img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Icons Frame Circle Blocks */
+.icon-badge-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+/* Unified Hover Mechanics */
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+.why-card:hover .matrix-img {
+  transform: scale(1.05);
+}
+
+.why-card:hover .icon-badge-circle {
+  transform: scale(1.1) rotate(6deg);
+}
+
+/* Corrects row matching for smaller responsive breakouts */
+@media (max-width: 991px) {
+  .why-card.text-card {
+    min-height: 180px;
+  }
+}
