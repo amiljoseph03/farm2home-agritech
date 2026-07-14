@@ -1,126 +1,139 @@
-/* Core Structural Adjustments */
-.ecosystem-section {
-  background-color: #fafbfa;
+/* Custom Design Elements */
+.diet-ecosystem-section {
+  background-color: #f8faf9 !important;
 }
 
-.fw-black {
-  font-weight: 900 !important;
+.text-teal-dark {
+  color: #123c38;
 }
 
-.text-light-stroke {
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(25, 135, 84, 0.12);
-  font-family: system-ui, -apple-system, sans-serif;
+.serif-font {
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
-/* Background Abstract Blob */
-.abstract-bg-shape {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(25, 135, 84, 0.03) 0%, rgba(25, 135, 84, 0) 70%);
+.badge-pill-accent {
+  background-color: rgba(18, 60, 56, 0.06);
+  color: #123c38;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* Horizontal Orbit Connector Line rules */
+.orbit-horizon-line {
+  height: 2px;
+  background: linear-gradient(90deg, rgba(18, 60, 56, 0.02) 0%, rgba(18, 60, 56, 0.15) 50%, rgba(18, 60, 56, 0.02) 100%);
+  top: 32% !important;
   z-index: 1;
-  pointer-events: none;
 }
 
-/* Asymmetric Image Wrapper Architecture */
-.img-asymmetric-wrapper {
-  height: 420px;
-  overflow: hidden;
-  border-radius: 24px;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+/* Circle Orbit Node Container Layout block */
+.circle-orbit-frame {
+  width: 170px;
+  height: 170px;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 50%;
+  z-index: 2;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Subtly angling the container box lines based on order parity */
-.skew-right {
-  clip-path: polygon(0 0, 100% 4%, 100% 96%, 0 100%);
+/* Floating Micro-Badge on Circle Outer Borders */
+.floating-node-badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.skew-left {
-  clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 96%);
+/* Image scaling animations inside viewport bounds */
+.node-img-asset {
+  transition: transform 0.6s ease;
 }
 
-.unique-img-asset {
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.unique-row-block:hover .unique-img-asset {
-  transform: scale(1.05) rotate(0.5deg);
-}
-
-.unique-vignette {
+/* Continuous Subtle Ambient Rippling Animation Layer rules */
+.pulse-ring-layer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(18, 60, 56, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1);
+  transition: all 0.5s ease;
 }
 
-/* Overlapping Box Mechanics */
-.unique-floating-card {
-  border-radius: 24px !important;
-  border-color: rgba(0, 0, 0, 0.05) !important;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+/* Interactive Hover States Rulesets */
+.orbit-node-wrapper:hover .circle-orbit-frame {
+  transform: scale(1.05) translateY(-4px);
 }
 
-/* Shifts content boxes inward to partially sit directly on top of the images */
-@media (min-width: 768px) {
-  .offset-content-left {
-    margin-left: -60px;
+.orbit-node-wrapper:hover .node-img-asset {
+  transform: scale(1.12);
+}
+
+.orbit-node-wrapper:hover .floating-node-badge {
+  transform: scale(1.15) rotate(8deg);
+}
+
+/* Dynamic ripples show up immediately on node frame hover */
+.orbit-node-wrapper:hover .layer-1 {
+  animation: ripplePulse 1.6s infinite ease-out;
+}
+.orbit-node-wrapper:hover .layer-2 {
+  animation: ripplePulse 1.6s infinite ease-out 0.6s;
+}
+
+/* CTA Microaction adjustments */
+.btn-node-trigger {
+  color: #123c38;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.arrow-shift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.orbit-node-wrapper:hover .btn-node-trigger {
+  color: #198754;
+}
+
+.orbit-node-wrapper:hover .arrow-shift {
+  transform: translateX(3px);
+}
+
+/* Keyframes Definitions for the Ripples */
+@keyframes ripplePulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
   }
-  .offset-content-right {
-    margin-right: -60px;
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
   }
 }
 
-.unique-row-block:hover .unique-floating-card {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(25, 135, 84, 0.08) !important;
-  border-color: rgba(25, 135, 84, 0.15) !important;
+/* Structural Padding Overrides across smaller layout sizes */
+@media (max-width: 767px) {
+  .circle-orbit-frame {
+    width: 140px;
+    height: 140px;
+  }
+  .text-node-content {
+    margin-top: 10px;
+  }
 }
-
-/* Icon Frame Styling */
-.icon-shield-frame {
-  border: 1px solid rgba(0,0,0,0.04);
-  transition: transform 0.4s ease;
-}
-
-.unique-row-block:hover .icon-shield-frame {
-  transform: scale(1.1) rotate(-3deg);
-}
-
-/* Custom Interactive Action Button */
-.btn-unique-action {
-  background-color: #f3f5f3;
-  color: #2b3a2e !important;
-  border: 1px solid transparent;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.action-circle-arrow {
-  width: 36px;
-  height: 36px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.arrow-svg {
-  transition: transform 0.3s ease;
-}
-
-/* Button hover structural modifications */
-.btn-unique-action:hover {
-  background-color: #198754;
-  color: #ffffff !important;
-}
-
-.btn-unique-action:hover .action-circle-arrow {
-  background-color: #ffffff !important;
-  color: #198754 !important;
-}
-
-.btn-unique-action:hover .arrow-svg {
-  transform: translateX(2px);
-}
-
