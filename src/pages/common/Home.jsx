@@ -16,9 +16,13 @@ export default function Home({ onExplore, onJoinAsFarmer }) {
 
       {/* 3. Core Operational Features Grid */}
       <ContentSection onExplore={onExplore} />
+
       {
-        <WhyWeAre onExplore={onExplore}/>
+        <WhyWeAre onExplore={onExplore} />
       }
+
+
+    
 
       {/* Simple Footer directly at base */}
       <footer className="bg-dark text-secondary text-center py-4 mt-auto">
