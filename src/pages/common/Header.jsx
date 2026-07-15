@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 export default function Header({ onExplore, onJoinAsFarmer }) {
+  const navigate = useNavigate();
+
   return (
     <nav className="navbar navbar-expand-lg px-4 py-3 custom-header sticky-top">
       <div className="container d-flex justify-content-between align-items-center">
@@ -15,11 +18,19 @@ export default function Header({ onExplore, onJoinAsFarmer }) {
           >
             Browse Marketplace
           </button>
+
           <button
             onClick={onJoinAsFarmer}
             className="btn btn-success rounded-pill px-4 fw-semibold shadow-sm header-btn-primary"
           >
             Farmer Portal
+          </button>
+
+          <button
+            onClick={() => navigate('/login')}
+            className="btn btn-outline-dark rounded-pill px-4 fw-semibold header-btn"
+          >
+            Login
           </button>
         </div>
       </div>

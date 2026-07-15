@@ -1,0 +1,38 @@
+.auth-section {
+  background-color: #e5e2db; /* Tonal background matching your WhyWeAre canvas */
+  min-height: 90vh;
+}
+
+.auth-card {
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+.fw-black {
+  font-weight: 950 !important;
+}
+
+.w-33 {
+  width: 33.333% !important;
+}
+
+.role-switcher-wrapper {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.form-control:focus {
+  border-color: #198754 !important;
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15) !important;
+}
+
+.transition-all {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.farmer-extended-fields {
+  animation: fadeInSlideDown 0.35s ease forwards;
+}
+
+@keyframes fadeInSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

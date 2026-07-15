@@ -1,74 +1,51 @@
-import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
+
+// Import pages structured based on your folder tree
 import Home from './pages/common/Home';
+import AuthContainer from './pages/auth/AuthContainer';
 import Marketplace from './pages/buyer/Marketplace';
-import FarmerDashboard from './pages/farmer/FarmerDashboard';
+import Farmerdashboard from './pages/farmer/Farmerdashboard';
+import ProtectedRoute from './pages/auth/ProtectedRoute';
 
-function App() {
-  const [currentRole, setCurrentRole] = useState('guest'); // 'guest', 'buyer', or 'farmer'
+// Simple placeholder for Admin Dashboard
+const AdminDashboard = () => (
+  <div className="p-5 text-danger">
+    <h2>Master Administration Control Unit</h2>
+  </div>
+);
 
+export default function App() {
   return (
     <ThemeProvider>
       <Router>
-        {/* Quick Design Switcher Bar */}
-        <div
-          className="bg-dark text-light p-2 d-flex justify-content-between align-items-center px-4 small"
-          style={{ zIndex: 9999, position: 'relative' }}
-        >
-          <span>
-            🛠️ <strong>Development Mode:</strong> Simulating{' '}
-            <strong>{currentRole.toUpperCase()}</strong> view
-          </span>
-          <div className="d-flex gap-2">
-            <button
-              className={`btn btn-sm py-0 px-2 ${currentRole === 'guest' ? 'btn-info text-dark' : 'btn-outline-light'}`}
-              onClick={() => setCurrentRole('guest')}
-            >
-              Public Home Page
-            </button>
-            <button
-              className={`btn btn-sm py-0 px-2 ${currentRole === 'buyer' ? 'btn-success' : 'btn-outline-light'}`}
-              onClick={() => setCurrentRole('buyer')}
-            >
-              Buyer Marketplace
-            </button>
-            <button
-              className={`btn btn-sm py-0 px-2 ${currentRole === 'farmer' ? 'btn-warning text-dark' : 'btn-outline-light'}`}
-              onClick={() => setCurrentRole('farmer')}
-            >
-              Farmer Dashboard
-            </button>
-          </div>
-        </div>
-
-        {/* Navigation Core */}
         <Routes>
+          {/* Public Open Landing Routes */}
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<AuthContainer mode="login" />} />
+          <Route path="/register" element={<AuthContainer mode="register" />} />
+
+          {/* Secure Buyer Routes */}
           <Route
-            path="/"
             element={
-              currentRole === 'buyer' ? (
-                <Marketplace />
-              ) : currentRole === 'farmer' ? (
-                <FarmerDashboard />
-              ) : (
-                <Home
-                  onExplore={() => setCurrentRole('buyer')}
-                  onJoinAsFarmer={() => setCurrentRole('farmer')}
-                />
-              )
+              <ProtectedRoute allowedRoles={['user', 'farmer', 'admin']} />
             }
-          />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          >
+            <Route path="/marketplace" element={<Marketplace />} />
+          </Route>
+
+          {/* Secure Isolated Farmer Dashboard */}
+          <Route element={<ProtectedRoute allowedRoles={['farmer']} />}>
+            <Route path="/farmer-dashboard" element={<Farmerdashboard />} />
+          </Route>
+
+          {/* Secure Isolated Admin Enterprise Dashboard */}
+          <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
+            <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          </Route>
         </Routes>
       </Router>
     </ThemeProvider>
   );
 }
-
-export default App;
