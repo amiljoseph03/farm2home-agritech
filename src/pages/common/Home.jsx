@@ -21,9 +21,7 @@ export default function Home({ onExplore, onJoinAsFarmer }) {
         <WhyWeAre onExplore={onExplore} />
       }
 
-
-    
-
+  
       {/* Simple Footer directly at base */}
       <footer className="bg-dark text-secondary text-center py-4 mt-auto">
         <small>
@@ -33,5 +31,4 @@ export default function Home({ onExplore, onJoinAsFarmer }) {
     </div>
   );
 }
-
 

@@ -156,6 +156,7 @@ export default function FarmerDashboard() {
                     Reject
                   </button>
                 </td>
+                
               </tr>
               <tr className="border-bottom">
                 <td className="py-3 fw-bold text-success">#US-7711</td>
